@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile-card {
+      background-color: white;
+      border-radius: 0px;
+      overflow: hidden;
+      width: 250px;
+      text-align: center;
+    }
+
+    .profile-card img.profile-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-info {
+      padding: 15px;
+    }
+
+    .name {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 10px 0 5px;
+    }
+
+    .role {
+      color: #555;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .talk-link {
+      color: #ff001e;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 16px;
+    }
+
+    .talk-link img {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cards-container">
+    <div class="profile-card">
+      <img class="profile-img" src="image1.jpg" alt="Rohan Agarwal">
+      <div class="card-info">
+        <p class="name">Rohan Agarwal</p>
+        <p class="role">Partner</p>
+        <a href="#" class="talk-link">
+          Talk to Me
+          <img src="arrow-right.svg" alt="Arrow right">
+        </a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <img class="profile-img" src="image2.jpg" alt="Kushal Bhatnagar">
+      <div class="card-info">
+        <p class="name">Kushal Bhatnagar</p>
+        <p class="role">Partner</p>
+        <a href="#" class="talk-link">
+          Talk to Me
+          <img src="arrow-right.svg" alt="Arrow right">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
