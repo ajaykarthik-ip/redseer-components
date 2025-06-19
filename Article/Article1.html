@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         * {
             margin: 0;
@@ -108,7 +109,6 @@
             height: 16px;
         }
 
-        /* Divider styles */
         .divider {
             max-width: 1200px;
             height: 0;
@@ -125,7 +125,6 @@
             gap: 70px;
         }
         
-        /* Vertical dividers */
         .vertical-divider {
             position: absolute;
             width: 1px;
@@ -211,119 +210,343 @@
             transform: translateX(3px);
         }
 
+        .mobile-swiper-container {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-            .featured-section {
-                flex-direction: column;
-                gap: 30px;
-                text-align: center;
+            .desktop-layout {
+                display: none;
             }
 
-            .reports-container {
+            .main-container {
+                width: 100%;
+                max-width: 412px;
+                height: auto;
+                margin: 0 auto;
+                display: flex;
                 flex-direction: column;
+                padding: 30px 20px;
+            }
+
+            .mobile-swiper-container {
+                display: block;
+            }
+
+            .swiper {
+                width: 100%;
+                height: auto;
+                padding-bottom: 40px;
+            }
+
+            .swiper-slide {
+                width: 100%;
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                max-width: none;
+            }
+
+             .swiper-slide .image-section {
+                width: 100%;         
+                height: 380px;       
+                background-size: cover;  
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .swiper-slide .content-section {
+                padding: 20px 0px 0px 0px;
+                min-height: 150px;
+            }
+
+            .swiper-slide .featured-label,
+            .swiper-slide .reports-label {
+                font-size: 15px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                color: #ff4444;
+            }
+
+            .swiper-slide .featured-title,
+            .swiper-slide .main-title {
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.4;
+                margin-bottom: 10px;
+                color: #272121;
+            }
+
+            .swiper-slide .featured-description,
+            .swiper-slide .report-description {
+                font-size: 16px;
+                line-height: 150%;
+                margin-bottom: 30px;
+                color: #666;
+            }
+
+            .swiper-slide .featured-meta-info,
+            .swiper-slide .meta-info {
+                font-size: 14px;
+                color: #666;
+                font-weight: 500;
+                margin-bottom: 20;
+            }
+
+            .swiper-slide .featured-meta-info span,
+            .swiper-slide .meta-info span {
+                margin: 0 6px;
+                color: #999;
+            }
+
+            .swiper-slide .read-more-btn,
+            .swiper-slide .report-read-more {
+                display: inline-flex;
+                margin-top: 40px;
                 align-items: center;
+                gap: 8px;
+                color: #ff4444;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: transform 0.3s ease;
             }
-            
-            .vertical-divider {
-                display: none; /* Hide vertical dividers on mobile */
+
+            .swiper-slide .read-more-btn:hover,
+            .swiper-slide .report-read-more:hover {
+                transform: translateX(3px);
             }
-            
-            .report-section {
-                margin: 0 0 30px 0;
+
+            .swiper-slide .arrow-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .swiper-pagination {
+                bottom: 10px;
+                text-align: left;
+                padding-top: 0px;
+            }
+
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 4px;
+                background: #706f6f;
+                opacity: 0.3;
+                margin: 0 4px;
+                border-radius: 0%;
+            }
+
+            .swiper-pagination-bullet-active {
+                width: 30px;
+                height: 4px;
+                opacity: 1;
+                background: #ff4444;
             }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <div class="featured-section">
-            <div class="featured-image">
-                <img src="hero.jpg" alt="Digital Finance Tablet">
+        <div class="desktop-layout">
+            <div class="featured-section">
+                <div class="featured-image">
+                    <img src="hero.jpg" alt="Digital Finance Tablet">
+                </div>
+                <div class="featured-content">
+                    <div class="featured-label">ARTICLE</div>
+                    <h1 class="featured-title">
+                        The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                    </h1>
+                    <p class="featured-description">
+                        Our latest survey finds executives facing rising costs, <br>
+                        surging demand, and a long to-do list.
+                    </p>
+                    <div class="featured-metadata">
+                        <div class="featured-meta-info">
+                            CONSUMER<span>•</span>UAE<span>•</span>JAN 21 2025
+                        </div>
+                    </div>
+                    <a href="#" class="read-more-btn">
+                        Read More
+                        <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                    </a>
+                </div>
             </div>
-            <div class="featured-content">
-                <div class="featured-label">ARTICLE</div>
-                <h1 class="featured-title">
-                    The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
-                </h1>
-                <p class="featured-description">
-                    Our latest survey finds executives facing rising costs, <br>
-                    surging demand, and a long to-do list.
-                </p>
-                <div class="featured-metadata">
-                    <div class="featured-meta-info">
-                        CONSUMER<span>•</span>UAE<span>•</span>JAN 21 2025
+
+            <div class="divider"></div>
+
+            <div class="reports-container">
+                <div class="report-section section-1">
+                    <div class="image-section"></div>
+                    <div class="content-section">
+                        <div class="reports-label">REPORTS</div>
+                        <h2 class="main-title">
+                            The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                        </h2>
+                        <div class="metadata">
+                            <div class="meta-info">
+                                B2B<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <div class="arrow-container">
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="read-more-btn">
-                    Read More
-                    <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
-                </a>
+                
+                <div class="vertical-divider" style="left: 32.33%;"></div>
+
+                <div class="report-section section-2">
+                    <div class="image-section"></div>
+                    <div class="content-section">
+                        <div class="reports-label">BLOG</div>
+                        <h2 class="main-title">
+                            The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                        </h2>
+                        <div class="metadata">
+                            <div class="meta-info">
+                                FINANCE<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <div class="arrow-container">
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vertical-divider" style="left: 67.66%;"></div>
+
+                <div class="report-section section-3">
+                    <div class="image-section"></div>
+                    <div class="content-section">
+                        <div class="reports-label">ARTICLE</div>
+                        <h2 class="main-title">
+                            The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                        </h2>
+                        <div class="metadata">
+                            <div class="meta-info">
+                                B2B<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <div class="arrow-container">
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Added gradient divider -->
-        <div class="divider"></div>
-
-        <div class="reports-container">
-            <div class="report-section section-1">
-                <div class="image-section"></div>
-                <div class="content-section">
-                    <div class="reports-label">REPORTS</div>
-                    <h2 class="main-title">
-                        The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
-                    </h2>
-                    <div class="metadata">
-                        <div class="meta-info">
-                            B2B<span>•</span>UAE<span>•</span>JAN 21 2025
+        <div class="mobile-swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide featured-slide">
+                        <div class="image-section" style="background-image: url('Rectangle.jpg');"></div>
+                        <div class="content-section">
+                            <div class="featured-label">ARTICLE</div>
+                            <h2 class="featured-title">
+                                The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                            </h2>
+                            <p class="featured-description">
+                                Our latest survey finds executives facing rising costs, surging demand, and a long to-do list.
+                            </p>
+                            <div class="featured-meta-info">
+                                CONSUMER<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <a href="#" class="read-more-btn">
+                                Read More
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </a>
                         </div>
-                        <div class="arrow-container">
-                            <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                    </div>
+
+                    <div class="swiper-slide report-slide">
+                        <div class="image-section" style="background-image: url('image3.jpg');"></div>
+                        <div class="content-section">
+                            <div class="reports-label">REPORTS</div>
+                            <h2 class="main-title">
+                                The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                            </h2>
+                            <p class="report-description">
+                                Our latest survey finds executives facing rising costs, surging demand, and a long to-do list.
+                            </p>
+                            <div class="meta-info">
+                                B2B<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <a href="#" class="report-read-more">
+                                Read More
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide report-slide">
+                        <div class="image-section" style="background-image: url('image4.jpg');"></div>
+                        <div class="content-section">
+                            <div class="reports-label">BLOG</div>
+                            <h2 class="main-title">
+                                The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                            </h2>
+                            <p class="report-description">
+                                Our latest survey finds executives facing rising costs, surging demand, and a long to-do list.
+                            </p>
+                            <div class="meta-info">
+                                FINANCE<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <a href="#" class="report-read-more">
+                                Read More
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide report-slide">
+                        <div class="image-section" style="background-image: url('image5.jpg');"></div>
+                        <div class="content-section">
+                            <div class="reports-label">ARTICLE</div>
+                            <h2 class="main-title">
+                                The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
+                            </h2>
+                            <p class="report-description">
+                                Our latest survey finds executives facing rising costs, surging demand, and a long to-do list.
+                            </p>
+                            <div class="meta-info">
+                                B2B<span>•</span>UAE<span>•</span>JAN 21 2025
+                            </div>
+                            <a href="#" class="report-read-more">
+                                Read More
+                                <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- First vertical divider -->
-            <div class="vertical-divider" style="left: 32.33%;"></div>
-
-            <div class="report-section section-2">
-                <div class="image-section"></div>
-                <div class="content-section">
-                    <div class="reports-label">BLOG</div>
-                    <h2 class="main-title">
-                        The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
-                    </h2>
-                    <div class="metadata">
-                        <div class="meta-info">
-                            FINANCE<span>•</span>UAE<span>•</span>JAN 21 2025
-                        </div>
-                        <div class="arrow-container">
-                            <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Second vertical divider -->
-            <div class="vertical-divider" style="left: 67.66%;"></div>
-
-            <div class="report-section section-3">
-                <div class="image-section"></div>
-                <div class="content-section">
-                    <div class="reports-label">ARTICLE</div>
-                    <h2 class="main-title">
-                        The Future of Digital Finance RedSeers Perspective on Netbanking Evolution
-                    </h2>
-                    <div class="metadata">
-                        <div class="meta-info">
-                            B2B<span>•</span>UAE<span>•</span>JAN 21 2025
-                        </div>
-                        <div class="arrow-container">
-                            <img src="arrow-right.svg" alt="Read more" class="arrow-icon">
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function initSwiper() {
+            if (window.innerWidth <= 768) {
+                var swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                });
+            }
+        }
+
+        initSwiper();
+        window.addEventListener('resize', initSwiper);
+    </script>
 </body>
 </html>
